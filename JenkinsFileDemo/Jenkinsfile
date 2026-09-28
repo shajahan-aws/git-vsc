@@ -11,6 +11,8 @@ pipeline {
 
     environment {
         IMAGE_NAME = "jenkins-demo-app"
+        // Windows par default Node.js Path
+        PATH = "C:\\Program Files\\nodejs;%PATH%"
     }
 
     stages {
@@ -27,17 +29,17 @@ pipeline {
         }
         stage('Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'cd JenkinsFileDemo && npm install'
             }
         }
         stage('Test App') {
             steps {
-                bat 'npm test'
+                bat 'cd JenkinsFileDemo && npm test'
             }
         }
         stage('Build') {
             steps {
-                bat 'docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
+                bat 'cd JenkinsFileDemo && docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
             }
         }
         stage('Run Container') {
