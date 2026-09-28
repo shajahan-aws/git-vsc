@@ -28,17 +28,17 @@ pipeline {
         }
         stage('Dependencies') {
             steps {
-                bat 'cd JenkinsFileDemo && npm install'
+                bat 'npm install'
             }
         }
         stage('Test App') {
             steps {
-                bat 'cd JenkinsFileDemo && npm test'
+                bat 'npm test'
             }
         }
         stage('Build') {
             steps {
-                bat 'cd JenkinsFileDemo && docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
+                bat 'docker build -t %IMAGE_NAME%:%BUILD_NUMBER% .'
             }
         }
         stage('Run Container') {
