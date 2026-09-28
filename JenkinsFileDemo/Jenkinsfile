@@ -11,8 +11,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "jenkins-demo-app"
-        // NodeJS aur Docker dono ke paths
-        PATH = "C:\\Program Files\\nodejs;C:\\Program Files\\Docker\\Docker\\resources\\bin;%PATH%"
+        PATH = "C:\\Program Files\\nodejs;C:\\Users\\shaja\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin;C:\\Windows\\system32;C:\\Windows"
     }
 
     stages {
