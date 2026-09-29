@@ -12,6 +12,7 @@ pipeline {
     environment {
         IMAGE_NAME = "jenkins-demo-app"
         PATH = "C:\\Program Files\\nodejs;C:\\Users\\shaja\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin;C:\\Windows\\system32;C:\\Windows"
+        DOCKER_HOST = "tcp://127.0.0.1:2375"
     }
 
     stages {
